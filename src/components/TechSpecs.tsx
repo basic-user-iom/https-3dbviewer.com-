@@ -1,3 +1,4 @@
+import { VIEWER_APP_VERSION } from '../viewerAppMeta'
 import './TechSpecs.css'
 
 const TechSpecs = () => {
@@ -27,7 +28,19 @@ const TechSpecs = () => {
       items: [
         { name: 'gltf-pipeline', version: '4.3.0', desc: 'GLTF processing' },
         { name: 'meshoptimizer', version: '0.25.0', desc: 'Mesh optimization' },
-        { name: 'jszip', version: '3.10.1', desc: 'ZIP archives for web export' }
+        { name: 'jszip', version: '3.10.1', desc: 'ZIP archives for web export' },
+        { name: 'ktx2-encoder', version: '0.5.1', desc: 'KTX2 texture compression' },
+        { name: 'dxf-parser', version: '1.1.2', desc: 'DXF CAD parsing' },
+        { name: 'web-ifc / web-ifc-three', version: '0.0.74', desc: 'IFC BIM loading' },
+        { name: 'gaussian-splats-3d', version: '0.4.7', desc: 'Gaussian splat rendering' }
+      ]
+    },
+    {
+      category: 'Desktop & Integration',
+      items: [
+        { name: 'Electron', version: '31.7.5', desc: 'Windows desktop shell' },
+        { name: 'electron-builder', version: '25.1.8', desc: 'NSIS + portable Windows builds' },
+        { name: 'Express', version: '5.1.0', desc: 'Bug server and Revit sync APIs' }
       ]
     }
   ]
@@ -44,6 +57,7 @@ const TechSpecs = () => {
     { name: '3DM', type: '3D Model (Rhino)', status: 'Full Support' },
     { name: 'DXF', type: 'Polylines (e.g. Revit)', status: 'Full Support' },
     { name: 'IFC', type: 'BIM (Industry Foundation)', status: 'Full Support' },
+    { name: 'Gaussian Splats', type: 'Point Cloud (.splat, .ksplat)', status: 'Full Support' },
     { name: 'ZIP', type: 'Archives (GLB + textures)', status: 'Full Support' },
     { name: 'HDR / EXR', type: 'Environment', status: 'Full Support' },
     { name: 'KTX2 / Basis', type: 'Texture', status: 'Full Support' }
@@ -54,7 +68,7 @@ const TechSpecs = () => {
       <div className="section-header">
         <h2 className="section-title">Technical Specifications</h2>
         <p className="section-subtitle">
-          Stack for the 3D Viewer application (v2.2.0) — this marketing site uses React 19 and Vite 7 only.
+          Stack for the 3D Viewer application (v{VIEWER_APP_VERSION}) — this marketing site uses React 19 and Vite 7 only.
         </p>
       </div>
       

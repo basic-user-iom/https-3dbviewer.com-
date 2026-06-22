@@ -1,7 +1,11 @@
 import './GettingStarted.css'
+import {
+  VIEWER_APP_VERSION,
+  VIEWER_APP_PATH_WIN,
+  VIEWER_APP_PATH_UNIX
+} from '../viewerAppMeta'
 
 const PRODUCTION_URL = 'https://3d-viewer-website.vercel.app'
-const VIEWER_REPO = 'cursor-3d-software'
 
 const GettingStarted = () => {
   const websiteSteps = [
@@ -34,9 +38,9 @@ const GettingStarted = () => {
   const viewerSteps = [
     {
       number: '1',
-      title: 'Open the Viewer Repo',
-      description: `Clone or open the 3D Viewer application at Desktop/${VIEWER_REPO} (separate from this website)`,
-      code: `cd ~/Desktop/${VIEWER_REPO}`
+      title: 'Open the Viewer Project',
+      description: `Open the 3D Viewer application at ${VIEWER_APP_PATH_WIN} (separate from this website)`,
+      code: `cd ${VIEWER_APP_PATH_UNIX}`
     },
     {
       number: '2',
@@ -52,6 +56,12 @@ const GettingStarted = () => {
     },
     {
       number: '4',
+      title: 'Desktop or Revit (Optional)',
+      description: 'Run the Electron desktop shell or connect to Revit live sync',
+      code: 'npm run desktop:dev      # Electron + viewer\nnpm run dev:with-revit   # Revit sync + viewer'
+    },
+    {
+      number: '5',
       title: 'Load Models',
       description: 'Drag & drop files, use the file picker, or load from URL in the running viewer',
       code: '// Open http://localhost:3000 in your browser'
@@ -67,6 +77,9 @@ const GettingStarted = () => {
   const viewerCommands = [
     { cmd: 'npm run dev', desc: 'Viewer (port 3000) + Streets GL server (port 8081)' },
     { cmd: 'npm run dev:full', desc: 'Bug server (3001) + Streets GL (8081) + viewer (3000)' },
+    { cmd: 'npm run dev:with-revit', desc: 'Revit sync server + Streets GL + viewer' },
+    { cmd: 'npm run desktop:dev', desc: 'Electron desktop shell against local Vite app' },
+    { cmd: 'npm run desktop:dist', desc: 'Build viewer + Streets GL + Windows NSIS/portable artifacts' },
     { cmd: 'npm run build', desc: 'Production build of the 3D Viewer app' },
     { cmd: 'npm run preview', desc: 'Preview the viewer production build' }
   ]
@@ -146,8 +159,9 @@ const GettingStarted = () => {
       <div className="project-section viewer-app-section">
         <h3 className="project-section-title">Run the 3D Viewer App</h3>
         <p className="project-section-desc">
-          The actual 3D Viewer (v2.2.0) lives in a separate repository — <code>{VIEWER_REPO}</code> on your Desktop.
-          Features, tech specs, and use cases on this site describe that application.
+          The actual 3D Viewer (v{VIEWER_APP_VERSION}) lives at{' '}
+          <code>{VIEWER_APP_PATH_WIN}</code>. Features, tech specs, and use cases on this site describe
+          that application.
         </p>
 
         <div className="steps-container">
@@ -215,10 +229,20 @@ const GettingStarted = () => {
             <div>
               <h4>Run 3D Viewer</h4>
               <p>
-                <code>cd Desktop/{VIEWER_REPO}</code> then <code>npm run dev</code> →{' '}
+                <code>cd {VIEWER_APP_PATH_UNIX}</code> then <code>npm run dev</code> →{' '}
                 <a href="http://localhost:3000" target="_blank" rel="noopener noreferrer">
                   localhost:3000
                 </a>
+              </p>
+            </div>
+          </div>
+          <div className="quick-start-item">
+            <span className="quick-start-icon">🖥️</span>
+            <div>
+              <h4>Desktop App</h4>
+              <p>
+                <code>npm run desktop:dev</code> for Electron, or <code>npm run desktop:dist</code> for
+                Windows installers
               </p>
             </div>
           </div>

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import HeroOrb from './HeroOrb'
+import { VIEWER_APP_VERSION } from '../viewerAppMeta'
 import './Navbar.css'
 
 const Navbar = () => {
@@ -19,7 +20,7 @@ const Navbar = () => {
         <div className="nav-logo">
           <HeroOrb variant="logo" />
           <span className="logo-text">3D Viewer</span>
-          <span className="logo-version">v2.2.0</span>
+          <span className="logo-version">v{VIEWER_APP_VERSION}</span>
           <span className="logo-beta">Beta</span>
         </div>
         <div className="nav-links">

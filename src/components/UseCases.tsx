@@ -1,3 +1,4 @@
+import { VIEWER_APP_VERSION, VIEWER_APP_PATH_WIN } from '../viewerAppMeta'
 import './UseCases.css'
 
 const UseCases = () => {
@@ -45,7 +46,7 @@ const UseCases = () => {
       <div className="section-header">
         <h2 className="section-title">Use Cases</h2>
         <p className="section-subtitle">
-          Real-world scenarios for the 3D Viewer application — run locally from the cursor-3d-software repo
+          Real-world scenarios for the 3D Viewer application (v{VIEWER_APP_VERSION}) — run locally from {VIEWER_APP_PATH_WIN}
         </p>
       </div>
       <div className="use-cases-grid">

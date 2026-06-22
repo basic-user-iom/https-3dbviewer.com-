@@ -50,13 +50,15 @@ npm run preview
 
 ## 3D Viewer Application
 
-The actual 3D Viewer app (v2.2.0) is a separate project in `cursor-3d-software` on your Desktop. Features, tech specs, and use cases on this site describe that application.
+The actual 3D Viewer app (v3.7.0) is a separate project at `F:\3d-viever-backup\v3.18`. Features, tech specs, and use cases on this site describe that application.
 
 ```bash
-cd ~/Desktop/cursor-3d-software
+cd F:/3d-viever-backup/v3.18
 npm install
-npm run dev          # Viewer at http://localhost:3000 + Streets GL at :8081
-npm run dev:full     # Also starts bug server at http://localhost:3001
+npm run dev              # Viewer at http://localhost:3000 + Streets GL at :8081
+npm run dev:full         # Also starts bug server at http://localhost:3001
+npm run desktop:dev      # Electron desktop shell
+npm run desktop:dist     # Windows NSIS + portable builds
 ```
 
 ## Project Structure

@@ -1,4 +1,5 @@
 import HeroOrb from './HeroOrb'
+import { VIEWER_APP_VERSION } from '../viewerAppMeta'
 import './Hero.css'
 
 const openOrbPreview = () => {
@@ -23,7 +24,7 @@ const Hero = () => {
             Beta — Not final release
           </div>
           <div className="hero-badge">
-            Version 2.2.0
+            Version {VIEWER_APP_VERSION}
           </div>
         </div>
         <h1 className="hero-title">
@@ -40,11 +41,11 @@ const Hero = () => {
             <div className="stat-label">Browser-based</div>
           </div>
           <div className="stat">
-            <div className="stat-number">12+</div>
+            <div className="stat-number">13+</div>
             <div className="stat-label">3D Formats</div>
           </div>
           <div className="stat">
-            <div className="stat-number">20+</div>
+            <div className="stat-number">30+</div>
             <div className="stat-label">UI Panels</div>
           </div>
           <div className="stat">

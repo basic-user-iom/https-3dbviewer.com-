@@ -1,3 +1,4 @@
+import { VIEWER_APP_VERSION } from '../viewerAppMeta'
 import './Features.css'
 
 const Features = () => {
@@ -10,7 +11,8 @@ const Features = () => {
         { name: 'Open folder', desc: 'Load a folder (model + textures); paths resolved for relative assets.' },
         { name: 'Load from URL', desc: 'Load a model from a URL with timeout and basic error handling.' },
         { name: 'Save / Load project', desc: 'Save scene, camera views, hotspots, and settings; restore saved projects.' },
-        { name: 'Drag & drop', desc: 'Drop model files or folders onto the viewer to load.' }
+        { name: 'Drag & drop', desc: 'Drop model files or folders onto the viewer to load.' },
+        { name: 'Gaussian splats', desc: 'Load .splat and .ksplat point-cloud scenes with dedicated rendering.' }
       ]
     },
     {
@@ -71,6 +73,7 @@ const Features = () => {
       features: [
         { name: 'Revit connection', desc: 'Connect to Revit sync server (HTTP + WebSocket); list sessions; load model from Revit; live updates.' },
         { name: 'Streets GL', desc: 'Optional map overlay; 3D buildings; sun direction sync; lat/lon/zoom for ground; toggle UI and interactivity.' },
+        { name: 'Electron desktop', desc: 'Run as a Windows desktop app (dev shell or NSIS/portable builds via electron-builder).' },
         { name: 'Places panel', desc: 'Experimental places/locations (under consideration).' }
       ]
     },
@@ -81,6 +84,9 @@ const Features = () => {
         { name: 'Orbit controls', desc: 'Rotate, pan, zoom around scene or selection.' },
         { name: 'Selection & transform gizmo', desc: 'Click to select; marquee selection; on-screen move/rotate/scale handles.' },
         { name: 'Floating panels', desc: 'Draggable, stackable panels; minimize; anchor left/right.' },
+        { name: 'Point cloud panel', desc: 'Render dense point clouds as points or Gaussian mode; adjustable point scale.' },
+        { name: 'AI enhancement panel', desc: 'Experimental AI-assisted material and scene enhancement tools.' },
+        { name: 'Shader editor', desc: 'Live GLSL shader editing and preview for learning and prototyping.' },
         { name: 'Keyboard shortcuts, toasts, project persistence', desc: 'Fit view, reset, undo/redo, camera views; missing texture dialog; save/load project.' }
       ]
     }
@@ -91,7 +97,7 @@ const Features = () => {
       <div className="section-header">
         <h2 className="section-title">Features</h2>
         <p className="section-subtitle">
-          Capabilities of the 3D Viewer application (separate repo) — not this marketing website.
+          Capabilities of the 3D Viewer application (v{VIEWER_APP_VERSION}) — not this marketing website.
           Grouped by: Files & formats, Modeling, Lighting & rendering, Presentation & export, Integrations.
         </p>
       </div>
