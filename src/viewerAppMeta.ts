@@ -4,8 +4,8 @@ export const VIEWER_APP_NAME = '3d-test-software'
 export const VIEWER_APP_PATH_WIN = 'F:\\3d-viever-backup\\v3.18'
 export const VIEWER_APP_PATH_UNIX = 'F:/3d-viever-backup/v3.18'
 
-/** GitHub org/user — update if your GitHub username differs from Vercel account */
-export const GITHUB_OWNER = 'iom-production-2775'
+/** GitHub org/user — matches mirjan@users.noreply.github.com */
+export const GITHUB_OWNER = 'mirjan'
 export const GITHUB_WEBSITE_REPO = '3d-viewer-website'
 export const GITHUB_VIEWER_REPO = '3d-viewer'
 
