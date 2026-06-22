@@ -8,14 +8,14 @@ export const VIEWER_APP_PATH_UNIX = 'F:/3d-viever-backup/v3.18'
 export const GITHUB_OWNER = 'basic-user-iom'
 export const GITHUB_WEBSITE_REPO = 'https-3dbviewer.com-'
 
-/** Planned viewer repo name — publish with scripts/publish-to-github.ps1 when ready */
-export const GITHUB_VIEWER_REPO = '3d-viewer'
+/** Viewer repo on GitHub */
+export const GITHUB_VIEWER_REPO = '3d'
 export const GITHUB_VIEWER_RELEASE_TAG = 'v3.18'
 
-/** Set true after basic-user-iom/3d-viewer exists on GitHub */
-export const GITHUB_VIEWER_REPO_PUBLISHED = false
+/** Set true after basic-user-iom/3d exists on GitHub */
+export const GITHUB_VIEWER_REPO_PUBLISHED = true
 /** Set true after the v3.18 release (with Windows artifacts) is published */
-export const GITHUB_VIEWER_RELEASE_PUBLISHED = false
+export const GITHUB_VIEWER_RELEASE_PUBLISHED = true
 
 export const GITHUB_WEBSITE_URL = `https://github.com/${GITHUB_OWNER}/${GITHUB_WEBSITE_REPO}`
 

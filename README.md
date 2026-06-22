@@ -54,7 +54,7 @@ npm run preview
 
 The 3D Viewer app (v3.18) is a separate project from this marketing website.
 
-- **Viewer source (planned):** `basic-user-iom/3d-viewer` — not published on GitHub yet
+- **Viewer source (planned):** `basic-user-iom/3d` — not published on GitHub yet
 - **Windows downloads:** will be on GitHub Releases (`v3.18`) after the viewer repo is published
 
 Use a local development copy (e.g. `F:\3d-viever-backup\v3.18`):

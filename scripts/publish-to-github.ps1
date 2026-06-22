@@ -12,10 +12,10 @@ $Owner = 'basic-user-iom'
 $WebsitePath = 'C:\Users\Mirjan\Desktop\webpage-3dviewer'
 $ViewerPath = 'F:\3d-viever-backup\v3.18'
 $WebsiteRepo = "$Owner/https-3dbviewer.com-"
-$ViewerRepo = "$Owner/3d-viewer"
+$ViewerRepo = "$Owner/3d"
 $ReleaseTag = 'v3.18'
-$SetupExe = 'F:\3d-viever-backup\v3.18\dist\desktop-build\3D-Viewer-Setup-3.7.0-x64.exe'
-$PortableExe = 'F:\3d-viever-backup\v3.18\dist\desktop-build\3D-Viewer-Portable-3.7.0-x64.exe'
+$SetupExe = 'F:\3d-viever-backup\v3.18\dist\desktop-build\3d-Setup-3.7.0-x64.exe'
+$PortableExe = 'F:\3d-viever-backup\v3.18\dist\desktop-build\3d-Portable-3.7.0-x64.exe'
 
 function Write-ManualRepoSteps {
   Write-Host ''
@@ -24,7 +24,7 @@ function Write-ManualRepoSteps {
   Write-Host 'Manual steps:'
   Write-Host '  1. Go to https://github.com/new'
   Write-Host '  2. Create public repo: https-3dbviewer.com- (no README, .gitignore, or license)'
-  Write-Host '  3. Create public repo: 3d-viewer (no README, .gitignore, or license)'
+  Write-Host '  3. Create public repo: 3d (no README, .gitignore, or license)'
   Write-Host '  4. Rerun: scripts\publish-to-github.ps1'
   Write-Host ''
   Write-Host 'Or use a classic PAT with the repo scope and run: gh auth login'
