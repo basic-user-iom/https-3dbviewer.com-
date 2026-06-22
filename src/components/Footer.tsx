@@ -1,4 +1,9 @@
-import { VIEWER_APP_VERSION } from '../viewerAppMeta'
+import {
+  VIEWER_APP_VERSION,
+  GITHUB_WEBSITE_URL,
+  GITHUB_VIEWER_URL,
+  GITHUB_VIEWER_RELEASE_URL
+} from '../viewerAppMeta'
 import './Footer.css'
 
 const Footer = () => {
@@ -35,6 +40,27 @@ const Footer = () => {
             <li><a href="#tech">Technical Specs</a></li>
             <li><a href="#use-cases">Use Cases</a></li>
             <li><a href="#features">Documentation</a></li>
+          </ul>
+        </div>
+        
+        <div className="footer-section">
+          <h4 className="footer-heading">GitHub</h4>
+          <ul className="footer-links">
+            <li>
+              <a href={GITHUB_WEBSITE_URL} target="_blank" rel="noopener noreferrer">
+                Website Repository
+              </a>
+            </li>
+            <li>
+              <a href={GITHUB_VIEWER_URL} target="_blank" rel="noopener noreferrer">
+                3D Viewer Source
+              </a>
+            </li>
+            <li>
+              <a href={GITHUB_VIEWER_RELEASE_URL} target="_blank" rel="noopener noreferrer">
+                Windows Downloads
+              </a>
+            </li>
           </ul>
         </div>
         

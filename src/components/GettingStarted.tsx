@@ -2,7 +2,12 @@ import './GettingStarted.css'
 import {
   VIEWER_APP_VERSION,
   VIEWER_APP_PATH_WIN,
-  VIEWER_APP_PATH_UNIX
+  VIEWER_APP_PATH_UNIX,
+  GITHUB_WEBSITE_URL,
+  GITHUB_VIEWER_URL,
+  GITHUB_VIEWER_RELEASE_URL,
+  VIEWER_WINDOWS_SETUP_URL,
+  VIEWER_WINDOWS_PORTABLE_URL
 } from '../viewerAppMeta'
 
 const PRODUCTION_URL = 'https://3d-viewer-website.vercel.app'
@@ -11,9 +16,9 @@ const GettingStarted = () => {
   const websiteSteps = [
     {
       number: '1',
-      title: 'Install Dependencies',
+      title: 'Clone from GitHub',
       description: 'Clone this marketing website repository and install packages',
-      code: 'npm install'
+      code: `git clone ${GITHUB_WEBSITE_URL}.git\ncd 3d-viewer-website\nnpm install`
     },
     {
       number: '2',
@@ -38,9 +43,9 @@ const GettingStarted = () => {
   const viewerSteps = [
     {
       number: '1',
-      title: 'Open the Viewer Project',
-      description: `Open the 3D Viewer application at ${VIEWER_APP_PATH_WIN} (separate from this website)`,
-      code: `cd ${VIEWER_APP_PATH_UNIX}`
+      title: 'Get the Viewer',
+      description: 'Clone from GitHub or open a local copy — separate from this marketing website',
+      code: `git clone ${GITHUB_VIEWER_URL}.git\ncd 3d-viewer\nnpm install`
     },
     {
       number: '2',
@@ -161,10 +166,41 @@ const GettingStarted = () => {
       <div className="project-section viewer-app-section">
         <h3 className="project-section-title">Run the 3D Viewer App</h3>
         <p className="project-section-desc">
-          The actual 3D Viewer (v{VIEWER_APP_VERSION}) lives at{' '}
-          <code>{VIEWER_APP_PATH_WIN}</code>. Features, tech specs, and use cases on this site describe
-          that application.
+          The actual 3D Viewer (v{VIEWER_APP_VERSION}) source is on{' '}
+          <a href={GITHUB_VIEWER_URL} target="_blank" rel="noopener noreferrer">
+            GitHub
+          </a>
+          . Features, tech specs, and use cases on this site describe that application.
         </p>
+
+        <div className="download-section">
+          <h4 className="download-title">Windows Standalone (v{VIEWER_APP_VERSION})</h4>
+          <p className="download-desc">
+            Pre-built installers from{' '}
+            <a href={GITHUB_VIEWER_RELEASE_URL} target="_blank" rel="noopener noreferrer">
+              GitHub Releases
+            </a>
+            {' '}— no Node.js required.
+          </p>
+          <div className="download-buttons">
+            <a
+              href={VIEWER_WINDOWS_SETUP_URL}
+              className="download-button"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Download Setup (.exe)
+            </a>
+            <a
+              href={VIEWER_WINDOWS_PORTABLE_URL}
+              className="download-button download-button-secondary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Download Portable (.exe)
+            </a>
+          </div>
+        </div>
 
         <div className="steps-container">
           {viewerSteps.map((step, idx) => (
@@ -241,10 +277,31 @@ const GettingStarted = () => {
           <div className="quick-start-item">
             <span className="quick-start-icon">🖥️</span>
             <div>
-              <h4>Desktop App</h4>
+              <h4>Windows Desktop</h4>
               <p>
-                <code>npm run desktop:dev</code> for Electron, or <code>npm run desktop:dist</code> for
-                Windows installers
+                <a href={VIEWER_WINDOWS_SETUP_URL} target="_blank" rel="noopener noreferrer">
+                  Download installer
+                </a>
+                {' '}or{' '}
+                <a href={VIEWER_WINDOWS_PORTABLE_URL} target="_blank" rel="noopener noreferrer">
+                  portable build
+                </a>
+                {' '}from GitHub Releases
+              </p>
+            </div>
+          </div>
+          <div className="quick-start-item">
+            <span className="quick-start-icon">📦</span>
+            <div>
+              <h4>Source on GitHub</h4>
+              <p>
+                <a href={GITHUB_WEBSITE_URL} target="_blank" rel="noopener noreferrer">
+                  Website repo
+                </a>
+                {' · '}
+                <a href={GITHUB_VIEWER_URL} target="_blank" rel="noopener noreferrer">
+                  Viewer repo
+                </a>
               </p>
             </div>
           </div>

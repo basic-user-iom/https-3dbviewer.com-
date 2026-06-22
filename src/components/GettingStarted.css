@@ -280,6 +280,76 @@
   line-height: 1.6;
 }
 
+.viewer-app-section {
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.download-section {
+  margin-bottom: 2.5rem;
+  padding: 1.75rem 2rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+}
+
+.download-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.download-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.25rem;
+  line-height: 1.6;
+}
+
+.download-desc a {
+  color: var(--primary-light);
+  text-decoration: none;
+}
+
+.download-desc a:hover {
+  text-decoration: underline;
+}
+
+.download-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.download-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.download-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+}
+
+.download-button-secondary {
+  background: transparent;
+  border: 1px solid var(--primary);
+  color: var(--primary-light);
+}
+
+.download-button-secondary:hover {
+  background: rgba(99, 102, 241, 0.1);
+  box-shadow: none;
+}
+
 @media (max-width: 768px) {
   .step-card {
     flex-direction: column;

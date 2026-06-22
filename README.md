@@ -36,6 +36,8 @@ The website will be available at `http://localhost:5000`
 
 Production: https://3d-viewer-website.vercel.app
 
+GitHub: https://github.com/iom-production-2775/3d-viewer-website
+
 ### Build
 
 ```bash
@@ -50,10 +52,14 @@ npm run preview
 
 ## 3D Viewer Application
 
-The actual 3D Viewer app (v3.18) is a separate project at `F:\3d-viever-backup\v3.18`. Features, tech specs, and use cases on this site describe that application.
+The 3D Viewer app (v3.18) is a separate project. Source and Windows builds are on GitHub:
+
+- **Viewer source:** https://github.com/iom-production-2775/3d-viewer
+- **Windows downloads:** https://github.com/iom-production-2775/3d-viewer/releases/latest
 
 ```bash
-cd F:/3d-viever-backup/v3.18
+git clone https://github.com/iom-production-2775/3d-viewer.git
+cd 3d-viewer
 npm install
 npm run dev              # Viewer at http://localhost:3000 + Streets GL at :8081
 npm run dev:full         # Also starts bug server at http://localhost:3001
@@ -61,6 +67,8 @@ npm run dev:with-revit   # Revit sync at :3002/:3003 + Streets GL + viewer
 npm run desktop:dev      # Electron desktop shell
 npm run desktop:dist     # Windows NSIS + portable builds
 ```
+
+Local development copy may also live at `F:\3d-viever-backup\v3.18`.
 
 ## Project Structure
 
