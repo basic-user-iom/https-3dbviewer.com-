@@ -11,7 +11,7 @@ import {
   VIEWER_WINDOWS_PORTABLE_URL
 } from '../viewerAppMeta'
 
-const PRODUCTION_URL = 'https://3d-viewer-website.vercel.app'
+const PRODUCTION_URL = 'https://3dbviewer.com'
 
 const GettingStarted = () => {
   const websiteSteps = [
