@@ -32,7 +32,9 @@ npm install
 npm run dev
 ```
 
-The website will be available at `http://localhost:3000`
+The website will be available at `http://localhost:5000`
+
+Production: https://3d-viewer-website.vercel.app
 
 ### Build
 
@@ -44,6 +46,17 @@ npm run build
 
 ```bash
 npm run preview
+```
+
+## 3D Viewer Application
+
+The actual 3D Viewer app (v2.2.0) is a separate project in `cursor-3d-software` on your Desktop. Features, tech specs, and use cases on this site describe that application.
+
+```bash
+cd ~/Desktop/cursor-3d-software
+npm install
+npm run dev          # Viewer at http://localhost:3000 + Streets GL at :8081
+npm run dev:full     # Also starts bug server at http://localhost:3001
 ```
 
 ## Project Structure

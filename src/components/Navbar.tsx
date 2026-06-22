@@ -19,7 +19,7 @@ const Navbar = () => {
         <div className="nav-logo">
           <HeroOrb variant="logo" />
           <span className="logo-text">3D Viewer</span>
-          <span className="logo-version">v3.7.0</span>
+          <span className="logo-version">v2.2.0</span>
           <span className="logo-beta">Beta</span>
         </div>
         <div className="nav-links">

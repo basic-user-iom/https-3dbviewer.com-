@@ -23,7 +23,7 @@ const Hero = () => {
             Beta — Not final release
           </div>
           <div className="hero-badge">
-            Version 3.7.0
+            Version 2.2.0
           </div>
         </div>
         <h1 className="hero-title">
@@ -31,13 +31,13 @@ const Hero = () => {
           <span className="gradient-text"> — Load, inspect, and present</span>
         </h1>
         <p className="hero-description">
-          Modern, client-side 3D model viewer. Load models in the browser or desktop; 
+          Modern, client-side 3D model viewer. Load models in the browser;
           adjust lighting and materials; create camera views and hotspots; export for web or images, video, and panorama.
         </p>
         <div className="hero-stats">
           <div className="stat">
-            <div className="stat-number">Web & Desktop</div>
-            <div className="stat-label">Browser + Electron</div>
+            <div className="stat-number">Web-based</div>
+            <div className="stat-label">Browser-based</div>
           </div>
           <div className="stat">
             <div className="stat-number">12+</div>

@@ -91,7 +91,8 @@ const Features = () => {
       <div className="section-header">
         <h2 className="section-title">Features</h2>
         <p className="section-subtitle">
-          Grouped by: Files & formats, Modeling, Lighting & rendering, Presentation & export, Integrations
+          Capabilities of the 3D Viewer application (separate repo) — not this marketing website.
+          Grouped by: Files & formats, Modeling, Lighting & rendering, Presentation & export, Integrations.
         </p>
       </div>
       <div className="features-grid">

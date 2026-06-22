@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" fill="none">
+  <defs>
+    <radialGradient id="orb-body" cx="30%" cy="25%" r="72%">
+      <stop offset="0%" stop-color="#fffef8"/>
+      <stop offset="8%" stop-color="#fff9d6"/>
+      <stop offset="22%" stop-color="#facc15"/>
+      <stop offset="38%" stop-color="#eab308"/>
+      <stop offset="58%" stop-color="#ca8a04"/>
+      <stop offset="78%" stop-color="#92400e"/>
+      <stop offset="100%" stop-color="#78350f"/>
+    </radialGradient>
+    <radialGradient id="orb-highlight" cx="22%" cy="18%" r="48%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="12%" stop-color="#ffffff" stop-opacity="0.65"/>
+      <stop offset="28%" stop-color="#ffffff" stop-opacity="0.2"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb-shadow" cx="76%" cy="78%" r="52%">
+      <stop offset="0%" stop-color="#180e03" stop-opacity="0.85"/>
+      <stop offset="22%" stop-color="#180e03" stop-opacity="0.55"/>
+      <stop offset="42%" stop-color="#92400e" stop-opacity="0.25"/>
+      <stop offset="60%" stop-color="#78350f" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="70%" stop-color="#facc15" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#facc15" stop-opacity="0.45"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="180" height="180" fill="#0a0a0f"/>
+  <circle cx="90" cy="90" r="78" fill="url(#orb-glow)"/>
+  <circle cx="90" cy="90" r="68" fill="url(#orb-body)"/>
+  <circle cx="90" cy="90" r="68" fill="url(#orb-highlight)"/>
+  <circle cx="90" cy="90" r="68" fill="url(#orb-shadow)"/>
+</svg>

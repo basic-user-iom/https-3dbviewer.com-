@@ -36,7 +36,7 @@ const UseCases = () => {
       title: 'Web Integration',
       icon: '🌐',
       description: 'Embed 3D viewers in web applications with Streets GL integration and coordinate synchronization.',
-      features: ['Embeddable viewer', 'API access', 'Streets GL sync', '360° panoramas']
+      features: ['Web export', 'Streets GL sync', '360° panoramas', 'Hotspot presentations']
     }
   ]
 
@@ -45,7 +45,7 @@ const UseCases = () => {
       <div className="section-header">
         <h2 className="section-title">Use Cases</h2>
         <p className="section-subtitle">
-          Versatile enough for professionals, accessible enough for everyone
+          Real-world scenarios for the 3D Viewer application — run locally from the cursor-3d-software repo
         </p>
       </div>
       <div className="use-cases-grid">

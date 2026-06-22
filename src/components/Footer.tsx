@@ -11,7 +11,7 @@ const Footer = () => {
             Advanced rendering, path tracing, and comprehensive 3D tools.
           </p>
           <div className="footer-version">
-            <span>Version 3.7.0</span>
+            <span>Version 2.2.0</span>
             <span className="version-dot">●</span>
             <span className="footer-beta">Beta — Not final release. Features and behavior may change.</span>
           </div>

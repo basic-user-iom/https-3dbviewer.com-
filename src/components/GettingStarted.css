@@ -2,6 +2,50 @@
   background: var(--bg-darker);
 }
 
+.project-section {
+  margin-bottom: 4rem;
+}
+
+.project-section-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.project-section-desc {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.project-section-desc code {
+  color: var(--primary-light);
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 0.9rem;
+}
+
+.viewer-app-section {
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.quick-start-item p code {
+  color: var(--primary-light);
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 0.85rem;
+}
+
+.quick-start-item p a {
+  color: var(--primary-light);
+  text-decoration: none;
+}
+
+.quick-start-item p a:hover {
+  text-decoration: underline;
+}
+
 .steps-container {
   display: flex;
   flex-direction: column;
@@ -76,7 +120,7 @@
 }
 
 .commands-title {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 2rem;
   text-align: center;
@@ -125,7 +169,7 @@
 }
 
 .servers-title {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 2rem;
   text-align: center;

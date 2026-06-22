@@ -5,12 +5,11 @@ const TechSpecs = () => {
     {
       category: 'Core Technologies',
       items: [
-        { name: 'React', version: '19.0.0', desc: 'Modern UI framework' },
-        { name: 'Vite', version: '7.0.0', desc: 'Next-gen build tool' },
+        { name: 'React', version: '19.2.0', desc: 'Modern UI framework' },
+        { name: 'Vite', version: '7.2.2', desc: 'Next-gen build tool' },
         { name: 'Three.js', version: '0.181.1', desc: '3D graphics library' },
-        { name: 'TypeScript', version: '5.6.3', desc: 'Type-safe development' },
-        { name: 'Zustand', version: 'Latest', desc: 'State management' },
-        { name: 'Electron', version: '—', desc: 'Desktop app (browser + desktop)' }
+        { name: 'TypeScript', version: '5.2.2', desc: 'Type-safe development' },
+        { name: 'Zustand', version: '5.0.8', desc: 'State management' }
       ]
     },
     {
@@ -28,7 +27,7 @@ const TechSpecs = () => {
       items: [
         { name: 'gltf-pipeline', version: '4.3.0', desc: 'GLTF processing' },
         { name: 'meshoptimizer', version: '0.25.0', desc: 'Mesh optimization' },
-        { name: 'ktx2-encoder', version: '0.5.1', desc: 'KTX2 texture encoding' }
+        { name: 'jszip', version: '3.10.1', desc: 'ZIP archives for web export' }
       ]
     }
   ]
@@ -55,7 +54,7 @@ const TechSpecs = () => {
       <div className="section-header">
         <h2 className="section-title">Technical Specifications</h2>
         <p className="section-subtitle">
-          Built with cutting-edge web technologies and industry-standard libraries
+          Stack for the 3D Viewer application (v2.2.0) — this marketing site uses React 19 and Vite 7 only.
         </p>
       </div>
       
