@@ -1,0 +1,104 @@
+.navbar {
+  position: fixed;
+  top: 40px; /* below beta banner */
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+  background: rgba(15, 23, 42, 0.95);
+  border-bottom-color: var(--border);
+  box-shadow: var(--shadow-lg);
+}
+
+.nav-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.logo-version {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  background: var(--bg-card);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.logo-beta {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #fbbf24;
+  background: rgba(245, 158, 11, 0.2);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+  position: relative;
+}
+
+.nav-links a:hover {
+  color: var(--primary-light);
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    padding: 1rem;
+  }
+  
+  .nav-links {
+    gap: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .logo-text {
+    display: none;
+  }
+}
+

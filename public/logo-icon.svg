@@ -1,0 +1,30 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="iconGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="iconGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a855f7;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="iconGradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7c3aed;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6366f1;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- 3D Cube - Front Face -->
+  <path d="M8 14 L16 8 L24 14 L16 20 Z" fill="url(#iconGradient1)" opacity="0.9"/>
+  
+  <!-- 3D Cube - Top Face -->
+  <path d="M16 8 L24 14 L24 22 L16 16 Z" fill="url(#iconGradient2)" opacity="0.7"/>
+  
+  <!-- 3D Cube - Right Face -->
+  <path d="M24 14 L24 22 L16 20 L16 16 Z" fill="url(#iconGradient3)" opacity="0.8"/>
+  
+  <!-- Eye/viewer symbol -->
+  <circle cx="16" cy="14" r="2" fill="white" opacity="0.9"/>
+  <circle cx="16" cy="14" r="1" fill="url(#iconGradient1)"/>
+</svg>
+

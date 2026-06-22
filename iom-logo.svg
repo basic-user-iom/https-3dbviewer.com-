@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 396.78 181.32">
+  <defs>
+    <linearGradient id="iomGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2ff0e6"/>
+      <stop offset="100%" stop-color="#1aa7c8"/>
+    </linearGradient>
+    <!-- Stronger water bending + 3D gloss -->
+    <filter id="waterBend" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="0.6" result="soften"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.02 0.04" numOctaves="2" seed="3" result="noise"/>
+      <feDisplacementMap in="soften" in2="noise" scale="14" xChannelSelector="R" yChannelSelector="G" result="displaced"/>
+      <feSpecularLighting in="displaced" surfaceScale="4" specularConstant="1.1" specularExponent="18" lighting-color="#ffffff" result="spec">
+        <fePointLight x="-120" y="-100" z="120"/>
+      </feSpecularLighting>
+      <feComposite in="spec" in2="displaced" operator="in" result="specClipped"/>
+      <feBlend in="displaced" in2="specClipped" mode="screen" result="lit"/>
+      <feDropShadow dx="6" dy="8" stdDeviation="6" flood-color="#000000" flood-opacity="0.25"/>
+      <feComposite in="lit" in2="SourceGraphic" operator="atop"/>
+    </filter>
+    <!-- Mask to create O cutout in M -->
+    <mask id="mMask">
+      <rect width="396.78" height="181.32" fill="white"/>
+      <circle cx="136" cy="90.66" r="90" fill="black"/>
+    </mask>
+  </defs>
+  <!-- M: with mask to create O cutout -->
+  <path d="M396.78,3.35v174.22h-41.64v-112.96l-48.58,74.66-48.58-74.66v112.96h-42.12v-21.78c32.7-35.77,33.23-93.83.48-129.71V3.35h44.27l45.95,75.14L351.39,5.11l1.6-1.75h43.79Z" fill="url(#iomGradient)" mask="url(#mMask)" filter="url(#waterBend)"/>
+  <!-- O: original geometry -->
+  <path d="M136.31.14c60.11-3.26,107.32,49.56,95.21,109.09-13.88,68.21-99.3,95.12-151.11,49.45C18.8,104.37,54.79,4.57,136.31.14ZM134.88,33.65c-44.53,3.94-66.16,59.44-37.7,93.42,29.49,35.21,87.53,23.39,99.3-21.29,10.57-40.12-20.53-75.76-61.6-72.13Z" fill="url(#iomGradient)" filter="url(#waterBend)"/>
+  <!-- I: rectangle with straight top -->
+  <rect x="0" y="3.83" width="42.12" height="173.74" fill="url(#iomGradient)" filter="url(#waterBend)"/>
+  <!-- Play: rounded triangle with true circular arcs (r=6) -->
+  <path d="M 124.6833 65.0016 L 165.2669 85.2934 A 6 6 0 0 1 165.2669 96.0266 L 124.6833 116.3184 A 6 6 0 0 1 116 110.9518 L 116 70.3682 A 6 6 0 0 1 124.6833 65.0016 Z" fill="url(#iomGradient)"/>
+</svg>

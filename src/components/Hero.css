@@ -1,0 +1,332 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: calc(var(--space-section) + var(--fixed-header-offset)) 1.5rem 5rem;
+  overflow: hidden;
+}
+
+.hero-content {
+  max-width: 720px;
+  text-align: center;
+  z-index: 2;
+  position: relative;
+}
+
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: var(--space-block);
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.375rem 0.75rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 9999px;
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+}
+
+.hero-badge-beta {
+  background: rgba(245, 158, 11, 0.15);
+  border-color: rgba(245, 158, 11, 0.5);
+  color: #fbbf24;
+}
+
+.badge-dot {
+  width: 8px;
+  height: 8px;
+  background: #10b981;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.hero-title {
+  font-size: clamp(2.25rem, 4.5vw, 3.75rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-block);
+  color: var(--text-primary);
+}
+
+.gradient-text {
+  background: var(--gradient-1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-description {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: var(--space-section);
+  max-width: 42ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-block);
+  margin-bottom: var(--space-section);
+  padding: var(--space-section) var(--space-block);
+  background: rgba(30, 41, 59, 0.6);
+  backdrop-filter: blur(12px);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: var(--gradient-1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.25rem;
+}
+
+.stat-label {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.875rem 1.75rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  min-height: 44px;
+  min-width: 44px;
+}
+
+.btn-primary {
+  background: var(--gradient-1);
+  color: white;
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-xl);
+}
+
+.btn-primary:focus-visible {
+  outline: 2px solid var(--primary-light);
+  outline-offset: 2px;
+}
+
+.btn-secondary {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--primary);
+}
+
+.hero-utility {
+  margin: 0 0 var(--space-section);
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+.hero-utility-link {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.hero-utility-link:hover {
+  color: var(--text-secondary);
+}
+
+.hero-utility-link:focus-visible {
+  outline: 2px solid var(--primary-light);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.hero-tech {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.tech-tag {
+  padding: 0.375rem 0.75rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.hero-visual {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.visual-grid,
+.visual-glow {
+  opacity: 0.3;
+}
+
+/* Position orb on the left in hero (HeroOrb.css defines the orb itself).
+   Use max() so the orb + glow (extends ~160px past orb) is never clipped on small viewports. */
+.hero-visual .hero-orb-container {
+  left: max(10%, 280px);
+}
+
+.visual-grid {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.grid-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  animation: float 6s ease-in-out infinite;
+}
+
+.grid-item:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.grid-item:nth-child(2) {
+  animation-delay: 1.5s;
+}
+
+.grid-item:nth-child(3) {
+  animation-delay: 3s;
+}
+
+.grid-item:nth-child(4) {
+  animation-delay: 4.5s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.visual-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+  filter: blur(80px);
+  opacity: 0.3;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: var(--space-section) 1.25rem 4rem;
+  }
+
+  .hero-description {
+    max-width: 100%;
+  }
+
+  .hero-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-block);
+    padding: var(--space-block);
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+    min-width: unset;
+    text-align: center;
+  }
+
+  .visual-grid {
+    width: 400px;
+    height: 400px;
+  }
+
+  .hero-visual .hero-orb-container {
+    left: max(16%, 250px);
+    width: 200px;
+    height: 200px;
+  }
+
+  .hero-visual .hero-orb {
+    width: 170px;
+    height: 170px;
+  }
+}
+

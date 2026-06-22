@@ -1,0 +1,262 @@
+.getting-started {
+  background: var(--bg-darker);
+}
+
+.steps-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.step-card {
+  display: flex;
+  gap: 2rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2.5rem;
+  transition: all 0.3s;
+}
+
+.step-card:hover {
+  border-color: var(--primary);
+  transform: translateX(8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.step-number {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--gradient-1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  flex-shrink: 0;
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+}
+
+.step-description {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.step-code {
+  background: var(--bg-dark);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.step-code code {
+  color: var(--primary-light);
+  font-size: 0.9rem;
+  font-family: 'Fira Code', 'Courier New', monospace;
+}
+
+.commands-section {
+  margin-bottom: 4rem;
+}
+
+.commands-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: var(--text-primary);
+}
+
+.commands-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.command-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s;
+}
+
+.command-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.command-code {
+  display: block;
+  color: var(--primary-light);
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  background: var(--bg-dark);
+  padding: 0.75rem;
+  border-radius: 6px;
+}
+
+.command-desc {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.servers-section {
+  margin-bottom: 4rem;
+}
+
+.servers-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: var(--text-primary);
+}
+
+.servers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.server-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s;
+}
+
+.server-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.server-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.server-name {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 1.1rem;
+}
+
+.server-status {
+  color: #10b981;
+  font-size: 1rem;
+  animation: pulse 2s infinite;
+}
+
+.server-url {
+  display: block;
+  color: var(--primary-light);
+  text-decoration: none;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  transition: color 0.2s;
+}
+
+.server-url:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.server-desc {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.quick-start {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 3rem;
+}
+
+.quick-start-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: var(--text-primary);
+}
+
+.quick-start-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.quick-start-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.quick-start-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.quick-start-item h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.quick-start-item p {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .step-card {
+    flex-direction: column;
+    padding: 2rem;
+  }
+  
+  .step-number {
+    align-self: flex-start;
+  }
+  
+  .commands-grid,
+  .servers-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .quick-start {
+    padding: 2rem;
+  }
+  
+  .quick-start-content {
+    grid-template-columns: 1fr;
+  }
+}
+
