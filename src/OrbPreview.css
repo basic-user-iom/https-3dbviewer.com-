@@ -1,7 +1,39 @@
 .orb-preview-page {
   min-height: 100vh;
   display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2.5rem;
+  padding: 2.5rem clamp(1rem, 4vw, 3rem);
+  background: var(--bg-darker);
+}
+
+.orb-preview-page__demo {
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: var(--bg-darker);
+  flex-shrink: 0;
+  padding-top: 1rem;
+}
+
+.orb-preview-page__hint {
+  margin-top: 1.25rem;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .orb-preview-page {
+    flex-direction: column;
+    align-items: stretch;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .orb-preview-page__demo {
+    padding-top: 0;
+  }
 }
