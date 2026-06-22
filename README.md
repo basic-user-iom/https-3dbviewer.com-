@@ -36,7 +36,7 @@ The website will be available at `http://localhost:5000`
 
 Production: https://3d-viewer-website.vercel.app
 
-GitHub: https://github.com/basic-user-iom/3d-viewer-website
+GitHub: https://github.com/basic-user-iom/https-3dbviewer.com-
 
 ### Build
 

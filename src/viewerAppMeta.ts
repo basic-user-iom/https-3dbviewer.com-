@@ -6,7 +6,7 @@ export const VIEWER_APP_PATH_UNIX = 'F:/3d-viever-backup/v3.18'
 
 /** GitHub org/user — https://github.com/basic-user-iom */
 export const GITHUB_OWNER = 'basic-user-iom'
-export const GITHUB_WEBSITE_REPO = '3d-viewer-website'
+export const GITHUB_WEBSITE_REPO = 'https-3dbviewer.com-'
 export const GITHUB_VIEWER_REPO = '3d-viewer'
 export const GITHUB_VIEWER_RELEASE_TAG = 'v3.18'
 

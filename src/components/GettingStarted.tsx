@@ -4,6 +4,7 @@ import {
   VIEWER_APP_PATH_WIN,
   VIEWER_APP_PATH_UNIX,
   GITHUB_WEBSITE_URL,
+  GITHUB_WEBSITE_REPO,
   GITHUB_VIEWER_URL,
   GITHUB_VIEWER_RELEASE_URL,
   VIEWER_WINDOWS_SETUP_URL,
@@ -18,7 +19,7 @@ const GettingStarted = () => {
       number: '1',
       title: 'Clone from GitHub',
       description: 'Clone this marketing website repository and install packages',
-      code: `git clone ${GITHUB_WEBSITE_URL}.git\ncd 3d-viewer-website\nnpm install`
+      code: `git clone ${GITHUB_WEBSITE_URL}.git\ncd ${GITHUB_WEBSITE_REPO}\nnpm install`
     },
     {
       number: '2',
@@ -114,7 +115,7 @@ const GettingStarted = () => {
       <div className="project-section">
         <h3 className="project-section-title">This Marketing Website</h3>
         <p className="project-section-desc">
-          Run and deploy the site you are viewing now (3d-viewer-website on port 5000).
+          Run and deploy the site you are viewing now ({GITHUB_WEBSITE_REPO} on port 5000).
         </p>
 
         <div className="steps-container">
