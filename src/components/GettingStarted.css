@@ -350,6 +350,14 @@
   box-shadow: none;
 }
 
+.download-section-pending {
+  border-style: dashed;
+}
+
+.download-section-pending .download-desc {
+  margin-bottom: 0;
+}
+
 @media (max-width: 768px) {
   .step-card {
     flex-direction: column;

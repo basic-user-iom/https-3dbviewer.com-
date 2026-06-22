@@ -52,14 +52,15 @@ npm run preview
 
 ## 3D Viewer Application
 
-The 3D Viewer app (v3.18) is a separate project. Source and Windows builds are on GitHub:
+The 3D Viewer app (v3.18) is a separate project from this marketing website.
 
-- **Viewer source:** https://github.com/basic-user-iom/3d-viewer
-- **Windows downloads:** https://github.com/basic-user-iom/3d-viewer/releases/latest
+- **Viewer source (planned):** `basic-user-iom/3d-viewer` — not published on GitHub yet
+- **Windows downloads:** will be on GitHub Releases (`v3.18`) after the viewer repo is published
+
+Use a local development copy (e.g. `F:\3d-viever-backup\v3.18`):
 
 ```bash
-git clone https://github.com/basic-user-iom/3d-viewer.git
-cd 3d-viewer
+cd F:/3d-viever-backup/v3.18
 npm install
 npm run dev              # Viewer at http://localhost:3000 + Streets GL at :8081
 npm run dev:full         # Also starts bug server at http://localhost:3001
@@ -68,7 +69,7 @@ npm run desktop:dev      # Electron desktop shell
 npm run desktop:dist     # Windows NSIS + portable builds
 ```
 
-Local development copy may also live at `F:\3d-viever-backup\v3.18`.
+Publish the viewer to GitHub with `scripts/publish-to-github.ps1` when ready.
 
 ## Project Structure
 

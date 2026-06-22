@@ -1,10 +1,13 @@
 import './GettingStarted.css'
 import {
   VIEWER_APP_VERSION,
-  VIEWER_APP_PATH_WIN,
   VIEWER_APP_PATH_UNIX,
   GITHUB_WEBSITE_URL,
   GITHUB_WEBSITE_REPO,
+  GITHUB_VIEWER_REPO,
+  GITHUB_VIEWER_RELEASE_TAG,
+  GITHUB_VIEWER_REPO_PUBLISHED,
+  GITHUB_VIEWER_RELEASE_PUBLISHED,
   GITHUB_VIEWER_URL,
   GITHUB_VIEWER_RELEASE_URL,
   VIEWER_WINDOWS_SETUP_URL,
@@ -45,8 +48,12 @@ const GettingStarted = () => {
     {
       number: '1',
       title: 'Get the Viewer',
-      description: 'Clone from GitHub or open a local copy — separate from this marketing website',
-      code: `git clone ${GITHUB_VIEWER_URL}.git\ncd 3d-viewer\nnpm install`
+      description: GITHUB_VIEWER_REPO_PUBLISHED
+        ? 'Clone from GitHub or open a local copy — separate from this marketing website'
+        : `Use a local copy for now — the ${GITHUB_VIEWER_REPO} GitHub repo is not published yet`,
+      code: GITHUB_VIEWER_REPO_PUBLISHED
+        ? `git clone ${GITHUB_VIEWER_URL}.git\ncd ${GITHUB_VIEWER_REPO}\nnpm install`
+        : `cd ${VIEWER_APP_PATH_UNIX}\nnpm install`
     },
     {
       number: '2',
@@ -167,41 +174,58 @@ const GettingStarted = () => {
       <div className="project-section viewer-app-section">
         <h3 className="project-section-title">Run the 3D Viewer App</h3>
         <p className="project-section-desc">
-          The actual 3D Viewer (v{VIEWER_APP_VERSION}) source is on{' '}
-          <a href={GITHUB_VIEWER_URL} target="_blank" rel="noopener noreferrer">
-            GitHub
-          </a>
+          The actual 3D Viewer (v{VIEWER_APP_VERSION})
+          {GITHUB_VIEWER_REPO_PUBLISHED ? (
+            <>
+              {' '}source is on{' '}
+              <a href={GITHUB_VIEWER_URL!} target="_blank" rel="noopener noreferrer">
+                GitHub
+              </a>
+            </>
+          ) : (
+            <> source will be published to GitHub ({GITHUB_VIEWER_REPO}) — use a local copy for now</>
+          )}
           . Features, tech specs, and use cases on this site describe that application.
         </p>
 
-        <div className="download-section">
-          <h4 className="download-title">Windows Standalone (v{VIEWER_APP_VERSION})</h4>
-          <p className="download-desc">
-            Pre-built installers from{' '}
-            <a href={GITHUB_VIEWER_RELEASE_URL} target="_blank" rel="noopener noreferrer">
-              GitHub Releases
-            </a>
-            {' '}— no Node.js required.
-          </p>
-          <div className="download-buttons">
-            <a
-              href={VIEWER_WINDOWS_SETUP_URL}
-              className="download-button"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Download Setup (.exe)
-            </a>
-            <a
-              href={VIEWER_WINDOWS_PORTABLE_URL}
-              className="download-button download-button-secondary"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Download Portable (.exe)
-            </a>
+        {GITHUB_VIEWER_RELEASE_PUBLISHED && VIEWER_WINDOWS_SETUP_URL && VIEWER_WINDOWS_PORTABLE_URL ? (
+          <div className="download-section">
+            <h4 className="download-title">Windows Standalone (v{VIEWER_APP_VERSION})</h4>
+            <p className="download-desc">
+              Pre-built installers from{' '}
+              <a href={GITHUB_VIEWER_RELEASE_URL!} target="_blank" rel="noopener noreferrer">
+                GitHub Releases
+              </a>
+              {' '}— no Node.js required.
+            </p>
+            <div className="download-buttons">
+              <a
+                href={VIEWER_WINDOWS_SETUP_URL}
+                className="download-button"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Download Setup (.exe)
+              </a>
+              <a
+                href={VIEWER_WINDOWS_PORTABLE_URL}
+                className="download-button download-button-secondary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Download Portable (.exe)
+              </a>
+            </div>
           </div>
-        </div>
+        ) : (
+          <div className="download-section download-section-pending">
+            <h4 className="download-title">Windows Standalone (v{VIEWER_APP_VERSION})</h4>
+            <p className="download-desc">
+              Pre-built installers will appear here after the viewer is published to GitHub
+              ({GITHUB_VIEWER_REPO}) with a {GITHUB_VIEWER_RELEASE_TAG} release.
+            </p>
+          </div>
+        )}
 
         <div className="steps-container">
           {viewerSteps.map((step, idx) => (
@@ -275,22 +299,24 @@ const GettingStarted = () => {
               </p>
             </div>
           </div>
-          <div className="quick-start-item">
-            <span className="quick-start-icon">🖥️</span>
-            <div>
-              <h4>Windows Desktop</h4>
-              <p>
-                <a href={VIEWER_WINDOWS_SETUP_URL} target="_blank" rel="noopener noreferrer">
-                  Download installer
-                </a>
-                {' '}or{' '}
-                <a href={VIEWER_WINDOWS_PORTABLE_URL} target="_blank" rel="noopener noreferrer">
-                  portable build
-                </a>
-                {' '}from GitHub Releases
-              </p>
+          {GITHUB_VIEWER_RELEASE_PUBLISHED && VIEWER_WINDOWS_SETUP_URL && VIEWER_WINDOWS_PORTABLE_URL ? (
+            <div className="quick-start-item">
+              <span className="quick-start-icon">🖥️</span>
+              <div>
+                <h4>Windows Desktop</h4>
+                <p>
+                  <a href={VIEWER_WINDOWS_SETUP_URL} target="_blank" rel="noopener noreferrer">
+                    Download installer
+                  </a>
+                  {' '}or{' '}
+                  <a href={VIEWER_WINDOWS_PORTABLE_URL} target="_blank" rel="noopener noreferrer">
+                    portable build
+                  </a>
+                  {' '}from GitHub Releases
+                </p>
+              </div>
             </div>
-          </div>
+          ) : null}
           <div className="quick-start-item">
             <span className="quick-start-icon">📦</span>
             <div>
@@ -299,10 +325,16 @@ const GettingStarted = () => {
                 <a href={GITHUB_WEBSITE_URL} target="_blank" rel="noopener noreferrer">
                   Website repo
                 </a>
-                {' · '}
-                <a href={GITHUB_VIEWER_URL} target="_blank" rel="noopener noreferrer">
-                  Viewer repo
-                </a>
+                {GITHUB_VIEWER_REPO_PUBLISHED && GITHUB_VIEWER_URL ? (
+                  <>
+                    {' · '}
+                    <a href={GITHUB_VIEWER_URL} target="_blank" rel="noopener noreferrer">
+                      Viewer repo
+                    </a>
+                  </>
+                ) : (
+                  <> · Viewer repo ({GITHUB_VIEWER_REPO}) — coming soon</>
+                )}
               </p>
             </div>
           </div>

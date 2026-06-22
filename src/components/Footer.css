@@ -79,6 +79,11 @@
   transition: color 0.2s;
 }
 
+.footer-link-pending {
+  font-style: italic;
+  opacity: 0.85;
+}
+
 .footer-links a:hover {
   color: var(--primary-light);
 }

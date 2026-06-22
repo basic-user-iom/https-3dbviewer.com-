@@ -1,6 +1,9 @@
 import {
   VIEWER_APP_VERSION,
   GITHUB_WEBSITE_URL,
+  GITHUB_VIEWER_REPO,
+  GITHUB_VIEWER_REPO_PUBLISHED,
+  GITHUB_VIEWER_RELEASE_PUBLISHED,
   GITHUB_VIEWER_URL,
   GITHUB_VIEWER_RELEASE_URL
 } from '../viewerAppMeta'
@@ -51,16 +54,24 @@ const Footer = () => {
                 Website Repository
               </a>
             </li>
-            <li>
-              <a href={GITHUB_VIEWER_URL} target="_blank" rel="noopener noreferrer">
-                3D Viewer Source
-              </a>
-            </li>
-            <li>
-              <a href={GITHUB_VIEWER_RELEASE_URL} target="_blank" rel="noopener noreferrer">
-                Windows Downloads
-              </a>
-            </li>
+            {GITHUB_VIEWER_REPO_PUBLISHED && GITHUB_VIEWER_URL ? (
+              <li>
+                <a href={GITHUB_VIEWER_URL} target="_blank" rel="noopener noreferrer">
+                  3D Viewer Source
+                </a>
+              </li>
+            ) : (
+              <li className="footer-link-pending">3D Viewer Source ({GITHUB_VIEWER_REPO}) — coming soon</li>
+            )}
+            {GITHUB_VIEWER_RELEASE_PUBLISHED && GITHUB_VIEWER_RELEASE_URL ? (
+              <li>
+                <a href={GITHUB_VIEWER_RELEASE_URL} target="_blank" rel="noopener noreferrer">
+                  Windows Downloads
+                </a>
+              </li>
+            ) : (
+              <li className="footer-link-pending">Windows Downloads — coming soon</li>
+            )}
           </ul>
         </div>
         
