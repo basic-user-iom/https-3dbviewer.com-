@@ -2,7 +2,7 @@
 # Creates GitHub repos, pushes source, uploads Windows release assets, connects Vercel to GitHub.
 
 $ErrorActionPreference = 'Stop'
-$Owner = 'mirjan'
+$Owner = 'basic-user-iom'
 $WebsitePath = 'C:\Users\Mirjan\Desktop\webpage-3dviewer'
 $ViewerPath = 'F:\3d-viever-backup\v3.18'
 $ReleaseTag = 'v3.18'

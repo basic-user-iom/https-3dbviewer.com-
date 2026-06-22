@@ -36,7 +36,7 @@ The website will be available at `http://localhost:5000`
 
 Production: https://3d-viewer-website.vercel.app
 
-GitHub: https://github.com/mirjan/3d-viewer-website
+GitHub: https://github.com/basic-user-iom/3d-viewer-website
 
 ### Build
 
@@ -54,11 +54,11 @@ npm run preview
 
 The 3D Viewer app (v3.18) is a separate project. Source and Windows builds are on GitHub:
 
-- **Viewer source:** https://github.com/mirjan/3d-viewer
-- **Windows downloads:** https://github.com/mirjan/3d-viewer/releases/latest
+- **Viewer source:** https://github.com/basic-user-iom/3d-viewer
+- **Windows downloads:** https://github.com/basic-user-iom/3d-viewer/releases/latest
 
 ```bash
-git clone https://github.com/mirjan/3d-viewer.git
+git clone https://github.com/basic-user-iom/3d-viewer.git
 cd 3d-viewer
 npm install
 npm run dev              # Viewer at http://localhost:3000 + Streets GL at :8081
