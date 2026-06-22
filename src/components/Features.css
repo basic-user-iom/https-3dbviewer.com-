@@ -24,6 +24,15 @@
   margin: 0 auto;
 }
 
+.section-subtitle a {
+  color: var(--primary-light);
+  text-decoration: none;
+}
+
+.section-subtitle a:hover {
+  text-decoration: underline;
+}
+
 .features-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));

@@ -1,5 +1,10 @@
 import HeroOrb from './HeroOrb'
-import { VIEWER_APP_VERSION } from '../viewerAppMeta'
+import {
+  VIEWER_APP_VERSION,
+  GITHUB_VIEWER_RELEASE_PUBLISHED,
+  VIEWER_WINDOWS_SETUP_URL,
+  GITHUB_VIEWER_RELEASE_URL
+} from '../viewerAppMeta'
 import './Hero.css'
 
 const openOrbPreview = () => {
@@ -15,6 +20,15 @@ const openOrbPreview = () => {
 }
 
 const Hero = () => {
+  const primaryHref =
+    GITHUB_VIEWER_RELEASE_PUBLISHED && VIEWER_WINDOWS_SETUP_URL
+      ? VIEWER_WINDOWS_SETUP_URL
+      : '#getting-started'
+  const primaryLabel =
+    GITHUB_VIEWER_RELEASE_PUBLISHED && VIEWER_WINDOWS_SETUP_URL
+      ? 'Download for Windows'
+      : 'Get the 3D Viewer'
+
   return (
     <section className="hero">
       <div className="hero-content">
@@ -32,13 +46,13 @@ const Hero = () => {
           <span className="gradient-text"> — Load, inspect, and present</span>
         </h1>
         <p className="hero-description">
-          Modern, client-side 3D model viewer. Load models in the browser;
-          adjust lighting and materials; create camera views and hotspots; export for web or images, video, and panorama.
+          Desktop and browser-based 3D model viewer. Load 13+ formats, adjust lighting and materials,
+          create camera views and hotspots, and export for web, images, video, or panorama.
         </p>
         <div className="hero-stats">
           <div className="stat">
-            <div className="stat-number">Web-based</div>
-            <div className="stat-label">Browser-based</div>
+            <div className="stat-number">Windows</div>
+            <div className="stat-label">Desktop app</div>
           </div>
           <div className="stat">
             <div className="stat-number">13+</div>
@@ -54,13 +68,28 @@ const Hero = () => {
           </div>
         </div>
         <div className="hero-actions">
-          <a href="#getting-started" className="btn btn-primary">
-            Get Started
+          <a
+            href={primaryHref}
+            className="btn btn-primary"
+            {...(GITHUB_VIEWER_RELEASE_PUBLISHED && VIEWER_WINDOWS_SETUP_URL
+              ? { target: '_blank', rel: 'noopener noreferrer' }
+              : {})}
+          >
+            {primaryLabel}
           </a>
-          <a href="#features" className="btn btn-secondary">
-            Explore Features
+          <a href="#getting-started" className="btn btn-secondary">
+            Run from Source
           </a>
         </div>
+        {GITHUB_VIEWER_RELEASE_PUBLISHED && GITHUB_VIEWER_RELEASE_URL ? (
+          <p className="hero-release-note">
+            v{VIEWER_APP_VERSION} —{' '}
+            <a href={GITHUB_VIEWER_RELEASE_URL} target="_blank" rel="noopener noreferrer">
+              GitHub Releases
+            </a>
+            {' '}(Setup + Portable)
+          </p>
+        ) : null}
         <p className="hero-utility">
           <button type="button" className="hero-utility-link" onClick={openOrbPreview} title="Open orb in new window">
             Open orb preview
@@ -89,4 +118,3 @@ const Hero = () => {
 }
 
 export default Hero
-

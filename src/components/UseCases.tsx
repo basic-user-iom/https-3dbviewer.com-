@@ -1,4 +1,4 @@
-import { VIEWER_APP_VERSION, VIEWER_APP_PATH_WIN } from '../viewerAppMeta'
+import { VIEWER_APP_VERSION, GITHUB_VIEWER_URL } from '../viewerAppMeta'
 import './UseCases.css'
 
 const UseCases = () => {
@@ -46,7 +46,8 @@ const UseCases = () => {
       <div className="section-header">
         <h2 className="section-title">Use Cases</h2>
         <p className="section-subtitle">
-          Real-world scenarios for the 3D Viewer application (v{VIEWER_APP_VERSION}) — run locally from {VIEWER_APP_PATH_WIN}
+          Real-world scenarios for the 3D Viewer application (v{VIEWER_APP_VERSION}) — download for Windows or run from{' '}
+          <a href={GITHUB_VIEWER_URL!} target="_blank" rel="noopener noreferrer">source on GitHub</a>
         </p>
       </div>
       <div className="use-cases-grid">
@@ -71,4 +72,3 @@ const UseCases = () => {
 }
 
 export default UseCases
-

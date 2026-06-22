@@ -1,7 +1,6 @@
 import './GettingStarted.css'
 import {
   VIEWER_APP_VERSION,
-  VIEWER_APP_PATH_UNIX,
   GITHUB_WEBSITE_URL,
   GITHUB_WEBSITE_REPO,
   GITHUB_VIEWER_REPO,
@@ -14,46 +13,21 @@ import {
   VIEWER_WINDOWS_PORTABLE_URL
 } from '../viewerAppMeta'
 
-const PRODUCTION_URL = 'https://3dbviewer.com'
-
 const GettingStarted = () => {
-  const websiteSteps = [
-    {
-      number: '1',
-      title: 'Clone from GitHub',
-      description: 'Clone this marketing website repository and install packages',
-      code: `git clone ${GITHUB_WEBSITE_URL}.git\ncd ${GITHUB_WEBSITE_REPO}\nnpm install`
-    },
-    {
-      number: '2',
-      title: 'Start Development Server',
-      description: 'Launch the site locally with hot-reload (Vite dev server on port 5000)',
-      code: 'npm run dev'
-    },
-    {
-      number: '3',
-      title: 'Build for Production',
-      description: 'Create an optimized static build in the dist/ folder',
-      code: 'npm run build'
-    },
-    {
-      number: '4',
-      title: 'Explore the Site',
-      description: 'Browse features, tech specs, and use cases; open the orb preview from the hero section',
-      code: 'npm run preview   # optional: preview the production build locally'
-    }
-  ]
-
   const viewerSteps = [
     {
       number: '1',
-      title: 'Get the Viewer',
-      description: GITHUB_VIEWER_REPO_PUBLISHED
-        ? 'Clone from GitHub or open a local copy — separate from this marketing website'
-        : `Use a local copy for now — the ${GITHUB_VIEWER_REPO} GitHub repo is not published yet`,
-      code: GITHUB_VIEWER_REPO_PUBLISHED
-        ? `git clone ${GITHUB_VIEWER_URL}.git\ncd ${GITHUB_VIEWER_REPO}\nnpm install`
-        : `cd ${VIEWER_APP_PATH_UNIX}\nnpm install`
+      title: GITHUB_VIEWER_RELEASE_PUBLISHED ? 'Download or Clone' : 'Get the Viewer',
+      description: GITHUB_VIEWER_RELEASE_PUBLISHED
+        ? 'Download a Windows installer (no Node.js required) or clone the 3D Viewer source from GitHub'
+        : GITHUB_VIEWER_REPO_PUBLISHED
+          ? 'Clone the 3D Viewer repository from GitHub'
+          : `Use a local copy — the ${GITHUB_VIEWER_REPO} GitHub repo is not published yet`,
+      code: GITHUB_VIEWER_RELEASE_PUBLISHED
+        ? `# Windows: use the download buttons above, or:\ngit clone ${GITHUB_VIEWER_URL}.git\ncd ${GITHUB_VIEWER_REPO}\nnpm install`
+        : GITHUB_VIEWER_REPO_PUBLISHED
+          ? `git clone ${GITHUB_VIEWER_URL}.git\ncd ${GITHUB_VIEWER_REPO}\nnpm install`
+          : `cd path/to/3d-viewer\nnpm install`
     },
     {
       number: '2',
@@ -63,28 +37,22 @@ const GettingStarted = () => {
     },
     {
       number: '3',
+      title: 'Load Models',
+      description: 'Drag & drop files, use the file picker, or load from URL in the running viewer',
+      code: '// Open http://localhost:3000 in your browser'
+    },
+    {
+      number: '4',
       title: 'Full Stack (Optional)',
       description: 'Start bug server, Streets GL, and viewer together for full development workflow',
       code: 'npm run dev:full'
     },
     {
-      number: '4',
+      number: '5',
       title: 'Desktop or Revit (Optional)',
       description: 'Run the Electron desktop shell or connect to Revit live sync',
       code: 'npm run desktop:dev      # Electron + viewer\nnpm run dev:with-revit   # Revit sync + viewer'
-    },
-    {
-      number: '5',
-      title: 'Load Models',
-      description: 'Drag & drop files, use the file picker, or load from URL in the running viewer',
-      code: '// Open http://localhost:3000 in your browser'
     }
-  ]
-
-  const websiteCommands = [
-    { cmd: 'npm run dev', desc: 'Start Vite dev server at http://localhost:5000' },
-    { cmd: 'npm run build', desc: 'Production build (output: dist/)' },
-    { cmd: 'npm run preview', desc: 'Serve the production build locally' }
   ]
 
   const viewerCommands = [
@@ -95,11 +63,6 @@ const GettingStarted = () => {
     { cmd: 'npm run desktop:dist', desc: 'Build viewer + Streets GL + Windows NSIS/portable artifacts' },
     { cmd: 'npm run build', desc: 'Production build of the 3D Viewer app' },
     { cmd: 'npm run preview', desc: 'Preview the viewer production build' }
-  ]
-
-  const websiteServers = [
-    { name: 'Production', url: PRODUCTION_URL, desc: 'Live marketing website (Vercel)' },
-    { name: 'Development', url: 'http://localhost:5000', desc: 'Local Vite dev server for this site' }
   ]
 
   const viewerServers = [
@@ -115,75 +78,21 @@ const GettingStarted = () => {
       <div className="section-header">
         <h2 className="section-title">Getting Started</h2>
         <p className="section-subtitle">
-          This page covers two projects: this marketing website and the separate 3D Viewer application
+          Download or run the 3D Viewer application (v{VIEWER_APP_VERSION}) — load models, adjust lighting,
+          create presentations, and export for web or desktop
         </p>
       </div>
 
-      <div className="project-section">
-        <h3 className="project-section-title">This Marketing Website</h3>
+      <div className="project-section viewer-app-section viewer-app-section-primary">
+        <h3 className="project-section-title">3D Viewer Application</h3>
         <p className="project-section-desc">
-          Run and deploy the site you are viewing now ({GITHUB_WEBSITE_REPO} on port 5000).
-        </p>
-
-        <div className="steps-container">
-          {websiteSteps.map((step, idx) => (
-            <div key={idx} className="step-card">
-              <div className="step-number">{step.number}</div>
-              <div className="step-content">
-                <h4 className="step-title">{step.title}</h4>
-                <p className="step-description">{step.description}</p>
-                <div className="step-code">
-                  <code>{step.code}</code>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div className="commands-section">
-          <h4 className="commands-title">Website Commands</h4>
-          <div className="commands-grid">
-            {websiteCommands.map((command, idx) => (
-              <div key={idx} className="command-card">
-                <code className="command-code">{command.cmd}</code>
-                <p className="command-desc">{command.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="servers-section">
-          <h4 className="servers-title">Website Endpoints</h4>
-          <div className="servers-grid">
-            {websiteServers.map((server, idx) => (
-              <div key={idx} className="server-card">
-                <div className="server-header">
-                  <span className="server-name">{server.name}</span>
-                  <span className="server-status">●</span>
-                </div>
-                <a href={server.url} className="server-url" target="_blank" rel="noopener noreferrer">
-                  {server.url}
-                </a>
-                <p className="server-desc">{server.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      <div className="project-section viewer-app-section">
-        <h3 className="project-section-title">Run the 3D Viewer App</h3>
-        <p className="project-section-desc">
-          The actual 3D Viewer (v{VIEWER_APP_VERSION})
-          {GITHUB_VIEWER_REPO_PUBLISHED ? (
-            <>
-              {' '}source is on{' '}
-              <a href={GITHUB_VIEWER_URL!} target="_blank" rel="noopener noreferrer">
-                GitHub
-              </a>
-            </>
+          The 3D Viewer is a separate project from this marketing website. Source code is on{' '}
+          {GITHUB_VIEWER_REPO_PUBLISHED && GITHUB_VIEWER_URL ? (
+            <a href={GITHUB_VIEWER_URL} target="_blank" rel="noopener noreferrer">
+              GitHub ({GITHUB_VIEWER_REPO})
+            </a>
           ) : (
-            <> source will be published to GitHub ({GITHUB_VIEWER_REPO}) — use a local copy for now</>
+            <>GitHub ({GITHUB_VIEWER_REPO}) — coming soon</>
           )}
           . Features, tech specs, and use cases on this site describe that application.
         </p>
@@ -196,7 +105,7 @@ const GettingStarted = () => {
               <a href={GITHUB_VIEWER_RELEASE_URL!} target="_blank" rel="noopener noreferrer">
                 GitHub Releases
               </a>
-              {' '}— no Node.js required.
+              {' '}— no Node.js required. Run the Setup or Portable .exe to start the viewer.
             </p>
             <div className="download-buttons">
               <a
@@ -274,31 +183,8 @@ const GettingStarted = () => {
       </div>
 
       <div className="quick-start">
-        <h3 className="quick-start-title">Quick Start Guide</h3>
+        <h3 className="quick-start-title">Quick Start</h3>
         <div className="quick-start-content">
-          <div className="quick-start-item">
-            <span className="quick-start-icon">🌐</span>
-            <div>
-              <h4>Visit Live Site</h4>
-              <p>
-                <a href={PRODUCTION_URL} target="_blank" rel="noopener noreferrer">
-                  {PRODUCTION_URL}
-                </a>
-              </p>
-            </div>
-          </div>
-          <div className="quick-start-item">
-            <span className="quick-start-icon">🎮</span>
-            <div>
-              <h4>Run 3D Viewer</h4>
-              <p>
-                <code>cd {VIEWER_APP_PATH_UNIX}</code> then <code>npm run dev</code> →{' '}
-                <a href="http://localhost:3000" target="_blank" rel="noopener noreferrer">
-                  localhost:3000
-                </a>
-              </p>
-            </div>
-          </div>
           {GITHUB_VIEWER_RELEASE_PUBLISHED && VIEWER_WINDOWS_SETUP_URL && VIEWER_WINDOWS_PORTABLE_URL ? (
             <div className="quick-start-item">
               <span className="quick-start-icon">🖥️</span>
@@ -312,29 +198,49 @@ const GettingStarted = () => {
                   <a href={VIEWER_WINDOWS_PORTABLE_URL} target="_blank" rel="noopener noreferrer">
                     portable build
                   </a>
-                  {' '}from GitHub Releases
+                  {' '}from GitHub Releases — fastest way to start
                 </p>
               </div>
             </div>
           ) : null}
           <div className="quick-start-item">
-            <span className="quick-start-icon">📦</span>
+            <span className="quick-start-icon">🎮</span>
             <div>
-              <h4>Source on GitHub</h4>
+              <h4>Run from Source</h4>
               <p>
-                <a href={GITHUB_WEBSITE_URL} target="_blank" rel="noopener noreferrer">
-                  Website repo
-                </a>
                 {GITHUB_VIEWER_REPO_PUBLISHED && GITHUB_VIEWER_URL ? (
                   <>
-                    {' · '}
-                    <a href={GITHUB_VIEWER_URL} target="_blank" rel="noopener noreferrer">
-                      Viewer repo
-                    </a>
+                    <code>git clone {GITHUB_VIEWER_URL}.git</code> then <code>npm run dev</code> →{' '}
                   </>
                 ) : (
-                  <> · Viewer repo ({GITHUB_VIEWER_REPO}) — coming soon</>
+                  <>Clone the viewer repo, then <code>npm run dev</code> →{' '}</>
                 )}
+                <a href="http://localhost:3000" target="_blank" rel="noopener noreferrer">
+                  localhost:3000
+                </a>
+              </p>
+            </div>
+          </div>
+          <div className="quick-start-item">
+            <span className="quick-start-icon">📦</span>
+            <div>
+              <h4>Viewer on GitHub</h4>
+              <p>
+                {GITHUB_VIEWER_REPO_PUBLISHED && GITHUB_VIEWER_URL ? (
+                  <a href={GITHUB_VIEWER_URL} target="_blank" rel="noopener noreferrer">
+                    basic-user-iom/{GITHUB_VIEWER_REPO}
+                  </a>
+                ) : (
+                  <>Viewer repo ({GITHUB_VIEWER_REPO}) — coming soon</>
+                )}
+                {GITHUB_VIEWER_RELEASE_PUBLISHED && GITHUB_VIEWER_RELEASE_URL ? (
+                  <>
+                    {' · '}
+                    <a href={GITHUB_VIEWER_RELEASE_URL} target="_blank" rel="noopener noreferrer">
+                      Releases
+                    </a>
+                  </>
+                ) : null}
               </p>
             </div>
           </div>
@@ -345,15 +251,40 @@ const GettingStarted = () => {
               <p>Read the Features section for 3D Viewer application capabilities</p>
             </div>
           </div>
-          <div className="quick-start-item">
-            <span className="quick-start-icon">🔮</span>
-            <div>
-              <h4>Orb Preview</h4>
-              <p>WebGL orb demo on this marketing site — open from the hero section</p>
-            </div>
-          </div>
         </div>
       </div>
+
+      <details className="developers-section">
+        <summary className="developers-section-summary">For Developers: This Marketing Website</summary>
+        <p className="developers-section-desc">
+          This page at 3dbviewer.com is a static marketing site ({GITHUB_WEBSITE_REPO}). It is separate from
+          the 3D Viewer application — users do not need to clone or build this repo to use the viewer.
+        </p>
+        <div className="developers-commands">
+          <div className="command-card">
+            <code className="command-code">git clone {GITHUB_WEBSITE_URL}.git</code>
+            <p className="command-desc">Clone this marketing website repository</p>
+          </div>
+          <div className="command-card">
+            <code className="command-code">npm install && npm run dev</code>
+            <p className="command-desc">Local dev server at http://localhost:5000</p>
+          </div>
+          <div className="command-card">
+            <code className="command-code">npm run build</code>
+            <p className="command-desc">Production build (output: dist/)</p>
+          </div>
+        </div>
+        <p className="developers-footnote">
+          <a href={GITHUB_WEBSITE_URL} target="_blank" rel="noopener noreferrer">
+            Website source on GitHub
+          </a>
+          {' · '}
+          Production:{' '}
+          <a href="https://3dbviewer.com" target="_blank" rel="noopener noreferrer">
+            3dbviewer.com
+          </a>
+        </p>
+      </details>
     </section>
   )
 }

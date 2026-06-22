@@ -5,7 +5,8 @@ import {
   GITHUB_VIEWER_REPO_PUBLISHED,
   GITHUB_VIEWER_RELEASE_PUBLISHED,
   GITHUB_VIEWER_URL,
-  GITHUB_VIEWER_RELEASE_URL
+  GITHUB_VIEWER_RELEASE_URL,
+  VIEWER_WINDOWS_SETUP_URL
 } from '../viewerAppMeta'
 import './Footer.css'
 
@@ -47,31 +48,38 @@ const Footer = () => {
         </div>
         
         <div className="footer-section">
-          <h4 className="footer-heading">GitHub</h4>
+          <h4 className="footer-heading">Download & Source</h4>
           <ul className="footer-links">
-            <li>
-              <a href={GITHUB_WEBSITE_URL} target="_blank" rel="noopener noreferrer">
-                Website Repository
-              </a>
-            </li>
-            {GITHUB_VIEWER_REPO_PUBLISHED && GITHUB_VIEWER_URL ? (
+            {GITHUB_VIEWER_RELEASE_PUBLISHED && VIEWER_WINDOWS_SETUP_URL ? (
               <li>
-                <a href={GITHUB_VIEWER_URL} target="_blank" rel="noopener noreferrer">
-                  3D Viewer Source
+                <a href={VIEWER_WINDOWS_SETUP_URL} target="_blank" rel="noopener noreferrer">
+                  Windows Installer
                 </a>
               </li>
-            ) : (
-              <li className="footer-link-pending">3D Viewer Source ({GITHUB_VIEWER_REPO}) — coming soon</li>
-            )}
+            ) : null}
             {GITHUB_VIEWER_RELEASE_PUBLISHED && GITHUB_VIEWER_RELEASE_URL ? (
               <li>
                 <a href={GITHUB_VIEWER_RELEASE_URL} target="_blank" rel="noopener noreferrer">
-                  Windows Downloads
+                  All Windows Downloads
                 </a>
               </li>
             ) : (
               <li className="footer-link-pending">Windows Downloads — coming soon</li>
             )}
+            {GITHUB_VIEWER_REPO_PUBLISHED && GITHUB_VIEWER_URL ? (
+              <li>
+                <a href={GITHUB_VIEWER_URL} target="_blank" rel="noopener noreferrer">
+                  3D Viewer Source ({GITHUB_VIEWER_REPO})
+                </a>
+              </li>
+            ) : (
+              <li className="footer-link-pending">3D Viewer Source ({GITHUB_VIEWER_REPO}) — coming soon</li>
+            )}
+            <li className="footer-link-secondary">
+              <a href={GITHUB_WEBSITE_URL} target="_blank" rel="noopener noreferrer">
+                Marketing Website Source
+              </a>
+            </li>
           </ul>
         </div>
         
@@ -99,4 +107,3 @@ const Footer = () => {
 }
 
 export default Footer
-

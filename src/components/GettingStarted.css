@@ -280,9 +280,65 @@
   line-height: 1.6;
 }
 
-.viewer-app-section {
-  padding-top: 2rem;
-  border-top: 1px solid var(--border-color);
+.viewer-app-section-primary {
+  border-top: none;
+  padding-top: 0;
+}
+
+.developers-section {
+  margin-top: 3rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  font-size: 0.9rem;
+}
+
+.developers-section-summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--text-secondary);
+  list-style: none;
+}
+
+.developers-section-summary::-webkit-details-marker {
+  display: none;
+}
+
+.developers-section-summary::before {
+  content: '▸ ';
+  color: var(--text-muted);
+}
+
+.developers-section[open] .developers-section-summary::before {
+  content: '▾ ';
+}
+
+.developers-section-desc {
+  margin: 1rem 0 1.25rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.developers-commands {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.developers-footnote {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.developers-footnote a {
+  color: var(--primary-light);
+  text-decoration: none;
+}
+
+.developers-footnote a:hover {
+  text-decoration: underline;
 }
 
 .download-section {

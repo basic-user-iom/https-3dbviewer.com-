@@ -79,6 +79,11 @@
   transition: color 0.2s;
 }
 
+.footer-link-secondary a {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
 .footer-link-pending {
   font-style: italic;
   opacity: 0.85;
