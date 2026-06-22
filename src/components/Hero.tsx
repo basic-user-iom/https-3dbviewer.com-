@@ -45,7 +45,7 @@ const Hero = () => {
             <div className="stat-label">3D Formats</div>
           </div>
           <div className="stat">
-            <div className="stat-number">30+</div>
+            <div className="stat-number">31</div>
             <div className="stat-label">UI Panels</div>
           </div>
           <div className="stat">

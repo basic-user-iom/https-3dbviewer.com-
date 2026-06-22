@@ -31,8 +31,8 @@ const TechSpecs = () => {
         { name: 'jszip', version: '3.10.1', desc: 'ZIP archives for web export' },
         { name: 'ktx2-encoder', version: '0.5.1', desc: 'KTX2 texture compression' },
         { name: 'dxf-parser', version: '1.1.2', desc: 'DXF CAD parsing' },
-        { name: 'web-ifc / web-ifc-three', version: '0.0.74', desc: 'IFC BIM loading' },
-        { name: 'gaussian-splats-3d', version: '0.4.7', desc: 'Gaussian splat rendering' }
+        { name: 'web-ifc / web-ifc-three', version: '0.0.74 / 0.0.126', desc: 'IFC BIM loading' },
+        { name: '@mkkellogg/gaussian-splats-3d', version: '0.4.7', desc: 'Gaussian splat rendering' }
       ]
     },
     {

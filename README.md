@@ -57,6 +57,7 @@ cd F:/3d-viever-backup/v3.18
 npm install
 npm run dev              # Viewer at http://localhost:3000 + Streets GL at :8081
 npm run dev:full         # Also starts bug server at http://localhost:3001
+npm run dev:with-revit   # Revit sync at :3002/:3003 + Streets GL + viewer
 npm run desktop:dev      # Electron desktop shell
 npm run desktop:dist     # Windows NSIS + portable builds
 ```
