@@ -71,7 +71,7 @@ const Features = () => {
       title: 'Integration & External',
       icon: '🔗',
       features: [
-        { name: 'Revit connection', desc: 'Connect to Revit sync server (HTTP + WebSocket); list sessions; load model from Revit; live updates.' },
+        { name: 'Revit connection', desc: 'Connect to Revit sync server (HTTP :3002 + WebSocket :3003); list sessions; load model from Revit; live updates.' },
         { name: 'Streets GL', desc: 'Optional map overlay; 3D buildings; sun direction sync; lat/lon/zoom for ground; toggle UI and interactivity.' },
         { name: 'Electron desktop', desc: 'Run as a Windows desktop app (dev shell or NSIS/portable builds via electron-builder).' },
         { name: 'Places panel', desc: 'Experimental places/locations (under consideration).' }

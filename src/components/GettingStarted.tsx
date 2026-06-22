@@ -77,7 +77,7 @@ const GettingStarted = () => {
   const viewerCommands = [
     { cmd: 'npm run dev', desc: 'Viewer (port 3000) + Streets GL server (port 8081)' },
     { cmd: 'npm run dev:full', desc: 'Bug server (3001) + Streets GL (8081) + viewer (3000)' },
-    { cmd: 'npm run dev:with-revit', desc: 'Revit sync server + Streets GL + viewer' },
+    { cmd: 'npm run dev:with-revit', desc: 'Revit sync (3002/3003) + Streets GL (8081) + viewer (3000)' },
     { cmd: 'npm run desktop:dev', desc: 'Electron desktop shell against local Vite app' },
     { cmd: 'npm run desktop:dist', desc: 'Build viewer + Streets GL + Windows NSIS/portable artifacts' },
     { cmd: 'npm run build', desc: 'Production build of the 3D Viewer app' },
@@ -92,6 +92,8 @@ const GettingStarted = () => {
   const viewerServers = [
     { name: '3D Viewer', url: 'http://localhost:3000', desc: 'Main viewer application (Vite)' },
     { name: 'Bug Server', url: 'http://localhost:3001', desc: 'Bug tracking API (dev:full only)' },
+    { name: 'Revit Sync API', url: 'http://localhost:3002', desc: 'Revit live-link HTTP API (dev:with-revit)' },
+    { name: 'Revit WebSocket', url: 'ws://localhost:3003', desc: 'Revit live-link WebSocket (dev:with-revit)' },
     { name: 'Streets GL', url: 'http://localhost:8081', desc: 'Streets GL map overlay server' }
   ]
 

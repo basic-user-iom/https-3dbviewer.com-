@@ -50,7 +50,7 @@ npm run preview
 
 ## 3D Viewer Application
 
-The actual 3D Viewer app (v3.7.0) is a separate project at `F:\3d-viever-backup\v3.18`. Features, tech specs, and use cases on this site describe that application.
+The actual 3D Viewer app (v3.18) is a separate project at `F:\3d-viever-backup\v3.18`. Features, tech specs, and use cases on this site describe that application.
 
 ```bash
 cd F:/3d-viever-backup/v3.18
