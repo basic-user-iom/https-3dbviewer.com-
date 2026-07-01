@@ -6,9 +6,9 @@ if (Test-Path $ghCliDir) { $env:Path = "$ghCliDir;$env:Path" }
 $ViewerPath = 'F:\3d-viever-backup\v3.18'
 $WebsitePath = 'C:\Users\Mirjan\Desktop\webpage-3dviewer'
 $ViewerRepo = 'basic-user-iom/3d'
-$ReleaseTag = 'v3.18'
-$SetupExe = "$ViewerPath\dist\desktop-build\3d-Setup-3.7.0-x64.exe"
-$PortableExe = "$ViewerPath\dist\desktop-build\3d-Portable-3.7.0-x64.exe"
+$ReleaseTag = 'v3.19'
+$SetupExe = "$ViewerPath\dist\desktop-build\3D-Viewer-Setup-3.19.0-x64.exe"
+$PortableExe = "$ViewerPath\dist\desktop-build\3D-Viewer-Portable-3.19.0-x64.exe"
 
 Write-Host 'Checking viewer repo exists...'
 gh repo view $ViewerRepo
@@ -40,7 +40,7 @@ $env:GIT_AUTHOR_EMAIL = 'basic-user-iom@users.noreply.github.com'
 $env:GIT_COMMITTER_NAME = 'basic-user-iom'
 $env:GIT_COMMITTER_EMAIL = 'basic-user-iom@users.noreply.github.com'
 git add src/viewerAppMeta.ts
-git commit -m "Enable viewer GitHub repo and v3.18 release links."
+git commit -m "Enable viewer GitHub repo and v3.19 release links."
 git push origin master:main
 
 Write-Host 'Deploying to Vercel production...'

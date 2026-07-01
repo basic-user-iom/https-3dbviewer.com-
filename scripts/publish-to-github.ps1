@@ -13,9 +13,9 @@ $WebsitePath = 'C:\Users\Mirjan\Desktop\webpage-3dviewer'
 $ViewerPath = 'F:\3d-viever-backup\v3.18'
 $WebsiteRepo = "$Owner/https-3dbviewer.com-"
 $ViewerRepo = "$Owner/3d"
-$ReleaseTag = 'v3.18'
-$SetupExe = 'F:\3d-viever-backup\v3.18\dist\desktop-build\3d-Setup-3.7.0-x64.exe'
-$PortableExe = 'F:\3d-viever-backup\v3.18\dist\desktop-build\3d-Portable-3.7.0-x64.exe'
+$ReleaseTag = 'v3.19'
+$SetupExe = 'F:\3d-viever-backup\v3.18\dist\desktop-build\3D-Viewer-Setup-3.19.0-x64.exe'
+$PortableExe = 'F:\3d-viever-backup\v3.18\dist\desktop-build\3D-Viewer-Portable-3.19.0-x64.exe'
 
 function Write-ManualRepoSteps {
   Write-Host ''
