@@ -7,7 +7,7 @@ Marketing website for the **3D Viewer** application — an advanced 3D model vie
 This repository is the marketing/landing page only. To **use** the 3D Viewer, download or clone the application repo:
 
 - **3D Viewer source:** https://github.com/basic-user-iom/3d
-- **Windows downloads (v3.18):** https://github.com/basic-user-iom/3d/releases/tag/v3.18
+- **Windows downloads (v3.19):** https://github.com/basic-user-iom/3d/releases/tag/v3.19
 
 ## 3D Viewer Application
 
